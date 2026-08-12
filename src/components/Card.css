@@ -1,0 +1,96 @@
+/* 1. 카드를 화면 중앙으로 정렬하는 감싸는 영역 */
+.card-wrapper {
+  display: flex;
+  justify-content: center; /* 가로 가운데 정렬 */
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* 2. 카드 형태 박스 스타일 */
+.journal-card {
+  width: 100%;
+  max-width: 480px; /* 카드 너비 */
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 카드 그림자 */
+  text-align: left; /* 카드 내부 텍스트는 좌측 정렬 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 카드 마우스 호버 효과 */
+.journal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 상단 위치 */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.location-pin {
+  font-size: 13px;
+}
+
+.destination {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+/* 제목 */
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 10px 0;
+}
+
+/* 서브 정보 (날짜 + 평점) */
+.card-sub-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.card-date {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-rating .stars {
+  color: #ffc107; /* 노란색 별 */
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.card-rating .score {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  margin-left: 2px;
+}
+
+/* 본문 */
+.card-content {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+  margin: 0;
+  white-space: pre-wrap;
+}

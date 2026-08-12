@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* 상단 하늘색 헤더 */
+.header {
+  height: 60px;
+  background-color: #87ceeb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #000000;
+  margin: 0;
+  cursor: pointer;
+}
+
+.header-btn {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 1. 카드를 화면 중앙으로 정렬하는 감싸는 영역 */
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* 2. 카드 형태 박스 스타일 */
+.journal-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+/* 상단 위치 */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.location-pin {
+  font-size: 13px;
+}
+
+.destination {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+/* 제목 */
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 10px 0;
+}
+
+/* 서브 정보 (날짜 + 평점) */
+.card-sub-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.card-date {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-rating .stars {
+  color: #ffc107;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.card-rating .score {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  margin-left: 2px;
+}
+
+/* 본문 */
+.card-content {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+  margin: 0 0 24px 0;
+  white-space: pre-wrap;
+}
+
+/* 하단 버튼 영역 */
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 16px;
+}
+
+.btn-back {
+  padding: 8px 18px;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+  background-color: #e5e7eb;
+  color: #111827;
+}

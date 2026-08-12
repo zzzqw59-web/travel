@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: skyblue;
+    padding: 20px;
+    font-weight: bold;
+}
