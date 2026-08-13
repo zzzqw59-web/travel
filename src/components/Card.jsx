@@ -1,11 +1,17 @@
 import React, { useContext } from 'react'
 import "./Card.css"
 import { TravelDataContext } from '../context/context'
+import { useNavigate } from 'react-router'
 
-const Card = ({title, theme, destination, createdAt, content, rating}) => {
+const Card = ({id ,title, theme, destination, createdAt, content, rating}) => {
+  const navigate = useNavigate();
+
+  const goTravel = () => {
+    navigate(`/travel/${id}`);
+  }
   return (
     <div className="card-wrapper">
-      <div className="journal-card">
+      <div className="journal-card" onClick={goTravel}>
         <div className="card-header">
           <span className="location-pin">📍</span>
           <span className="destination">{destination} / {theme}</span>

@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import "./Form.css"
 import { useNavigate } from 'react-router'
 
-const Form = ({onCreate}) => {
+const Form = ({onCreate, formTitle, initialData, onUpdate}) => {
     const navigate = useNavigate();
 
     const [form, setForm] = useState({
-      title: "",
-      destination: "",
-      theme: "",
-      rating: 0,
-      content: ""
+      title: "" || initialData?.title,
+      destination: "" || initialData?.destination,
+      theme: "" || initialData?.theme,
+      rating: 0 || initialData?.rating,
+      content: "" || initialData?.content
     });
 
     const goBack = () => {
@@ -48,14 +48,19 @@ const Form = ({onCreate}) => {
 
         const {title, destination, theme, rating, content} = form;
 
-        onCreate(title, destination, theme, rating, content);
+        if (initialData) {
+          onUpdate(initialData.id, title, destination, theme, rating, content, new Date());
+        } else {
+          onCreate(title, destination, theme, rating, content, new Date());
+        }
+
         navigate("/");
     };
   return (
     <div className="form-wrapper">
       <div className="form-card">
         <div className="form-header">
-          <h1 className="form-title">새 여행 기록하기</h1>
+          <h1 className="form-title">{formTitle}</h1>
           <p className="form-subtitle">다녀온 여행을 기록해보세요!</p>
         </div>
 

@@ -65,7 +65,7 @@ function App() {
         id: idRef.current,
         title,
         theme,
-        createdAt: new Date(date).getTime(),
+        createdAt: Date.now(),
         content,
         rating,
         destination
@@ -82,7 +82,7 @@ function App() {
         title,
         theme,
         destination,
-        createdAt: new Date(date).getTime(),
+        createdAt: Date.now(),
         content,
         rating,
       }
