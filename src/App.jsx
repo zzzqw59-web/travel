@@ -1,4 +1,4 @@
-import { useReducer, useRef, useState } from 'react'
+import { useEffect, useReducer, useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -10,6 +10,7 @@ import Edit from './pages/Edit'
 import Home from './pages/Home'
 import Header from './components/Header'
 import { TravelDataContext, TravelMethodContext } from './context/context'
+import { getList } from './api/travelRecord'
 
 const mockData = [
   {
@@ -56,7 +57,14 @@ function reducer(state, action) {
 
 function App() {
   const [data, dispatch] = useReducer(reducer, mockData);
+  const [travleRecord, setTravelRecord] = useState([]);
   const idRef = useRef(4);
+
+  useEffect(() => {
+    getList().then((data) => {
+      setTravelRecord(data);
+    });
+  }, [])
 
   const onCreate = (title, destination, theme,  rating, content, date) => {
     dispatch({
@@ -99,7 +107,7 @@ function App() {
 
 
   return (
-    <TravelDataContext value={data}>
+    <TravelDataContext value={travleRecord}>
       <TravelMethodContext value={{onCreate, onDelete, onUpdate}}>
       <Routes>
         <Route path='/' element={<Home />} />
